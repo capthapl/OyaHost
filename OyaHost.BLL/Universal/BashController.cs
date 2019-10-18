@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using System;
+using Renci.SshNet;
+using OyaHost.BLL.Core;
 
 namespace OyaHost.BLL.Universal
 {
@@ -12,31 +14,24 @@ namespace OyaHost.BLL.Universal
         /// <param name="command">Polecenie</param>
         /// <param name="args">Argumenty polecenia</param>
         /// <returns></returns>
-        public static CommandResponse ExecCommand(string command, string args)
+        public static void ExecCommand(string command, string args)
         {
-            var process = new Process()
+            using (var sshclient = new SshClient(SSHClient.Instance.ConnectionInfo))
             {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = command,
-                    Arguments = args,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                }
-            };
-            process.Start();
-            string output = process.StandardOutput.ReadToEnd();
-            string error = process.StandardError.ReadToEnd();
-            process.WaitForExit();
+                sshclient.Connect();
 
-            if (string.IsNullOrEmpty(error))
+                Console.WriteLine(sshclient.CreateCommand("cd /tmp && ls -lah").Execute());
+                Console.WriteLine(sshclient.CreateCommand("pwd").Execute());
+                Console.WriteLine(sshclient.CreateCommand("cd /tmp/uploadtest && ls -lah").Execute());
+                sshclient.Disconnect();
+            }
+
+           /* if (string.IsNullOrEmpty(error))
             {
                 return new CommandResponse(CommandResponseStatusCode.Success,output);
             }else{
                 return new CommandResponse(CommandResponseStatusCode.Error,output,error);
-            }
+            }*/
         }
     }
 }
