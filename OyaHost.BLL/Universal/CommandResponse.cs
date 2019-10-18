@@ -10,12 +10,14 @@ namespace OyaHost.BLL.Universal
         public CommandResponseStatusCode CommandResponseStatusCode { get; private set; }
         public string Response { get; private set; }
         public string Error { get; private set; }
+        public string ExceptionMessage { get; private set; }
         
-        public CommandResponse( CommandResponseStatusCode commandResponseStatusCode, string response, string error = "")
+        public CommandResponse( CommandResponseStatusCode commandResponseStatusCode, string response, string error = "", string exceptionMessage = "")
         {
             this.CommandResponseStatusCode = commandResponseStatusCode;
             this.Response = response;
             this.Error = error;
+            this.ExceptionMessage = exceptionMessage;
         }
     }
 }

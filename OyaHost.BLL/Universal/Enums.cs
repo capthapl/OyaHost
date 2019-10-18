@@ -7,7 +7,8 @@ namespace OyaHost.BLL.Universal
         Fedora30 = 0,
     }
     public enum CommandResponseStatusCode{
+        Error = 0,
         Success = 1,
-        Error = 0
+        Exception = 2,
     }
 }
