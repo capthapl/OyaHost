@@ -22,7 +22,7 @@ namespace OyaHost.BLL.Universal
                     Arguments = args,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
-                    UseShellExecute = true,
+                    UseShellExecute = false,
                     CreateNoWindow = true
                 }
             };
