@@ -1,17 +1,15 @@
 using NUnit.Framework;
+using OyaHost.BLL;
 
 namespace OyaHost.BLL.Test
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
 
         [Test]
-        public void Test1()
+        public void GetAllVmNames()
         {
+            GetAllVmNames();
             Assert.Pass();
         }
     }

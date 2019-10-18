@@ -2,15 +2,12 @@ using System;
 
 namespace OyaHost.BLL.Universal
 {
-    public enum SystemVersions
+    public enum SystemVersion
     {
-        Fedora30,
+        Fedora30 = 0,
     }
-    public enum VmCreateParams
-    {
-        Name,
-        VCpus,
-        Ram,
-        Disk
+    public enum CommandResponseStatusCode{
+        Success = 1,
+        Error = 0
     }
 }
