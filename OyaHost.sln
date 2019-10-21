@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.138
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OyaHost.ServerNode", "OyaHost.ServerNode\OyaHost.ServerNode.csproj", "{B69B0428-0B06-4EC0-861A-ABA79D1C2E58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OyaHost.ServerNode", "OyaHost.ServerNode\OyaHost.ServerNode.csproj", "{B69B0428-0B06-4EC0-861A-ABA79D1C2E58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OyaHost.BLL", "OyaHost.BLL\OyaHost.BLL.csproj", "{9F031BDF-DF60-4289-9195-2C5CCD9C39DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OyaHost.BLL", "OyaHost.BLL\OyaHost.BLL.csproj", "{9F031BDF-DF60-4289-9195-2C5CCD9C39DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OyaHost.BLL.Test", "OyaHost.BLL.Test\OyaHost.BLL.Test.csproj", "{2E07AEEF-ABB1-4B4B-B3DB-6B0B413D169B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OyaHost.BLL.Test", "OyaHost.BLL.Test\OyaHost.BLL.Test.csproj", "{2E07AEEF-ABB1-4B4B-B3DB-6B0B413D169B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OyaHost.BLL.Console", "OyaHost.Console\OyaHost.BLL.Console.csproj", "{678680A3-0A35-4FAF-9838-9114A8825817}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OyaHost.BLL.Console", "OyaHost.Console\OyaHost.BLL.Console.csproj", "{678680A3-0A35-4FAF-9838-9114A8825817}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibvirtBindings", "LibvirtBindings\LibvirtBindings.csproj", "{592FE0DB-C205-4934-BD20-79BDAB1584C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B69B0428-0B06-4EC0-861A-ABA79D1C2E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,5 +71,23 @@ Global
 		{678680A3-0A35-4FAF-9838-9114A8825817}.Release|x64.Build.0 = Release|Any CPU
 		{678680A3-0A35-4FAF-9838-9114A8825817}.Release|x86.ActiveCfg = Release|Any CPU
 		{678680A3-0A35-4FAF-9838-9114A8825817}.Release|x86.Build.0 = Release|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Debug|x64.Build.0 = Debug|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Debug|x86.Build.0 = Debug|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Release|x64.ActiveCfg = Release|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Release|x64.Build.0 = Release|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Release|x86.ActiveCfg = Release|Any CPU
+		{592FE0DB-C205-4934-BD20-79BDAB1584C1}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {160D04AC-2D0F-4400-92BA-64B88151F0F3}
 	EndGlobalSection
 EndGlobal

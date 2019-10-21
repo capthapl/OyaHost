@@ -1,0 +1,14 @@
+
+*.pidb
+*.userprefs
+*.user
+_ReSharper*
+*.obj
+*.pdb
+Thumbs.db
+*.dll
+obj/
+[Bb]in/
+[Dd]ebug
+*.suo
+[Rr]elease/
