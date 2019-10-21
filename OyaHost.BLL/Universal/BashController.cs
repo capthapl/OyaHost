@@ -4,6 +4,7 @@ using Renci.SshNet;
 using OyaHost.BLL.Core;
 using Renci.SshNet.Common;
 using System.Net.Sockets;
+using System.IO;
 
 namespace OyaHost.BLL.Universal
 {
@@ -12,7 +13,7 @@ namespace OyaHost.BLL.Universal
 
         /// <summary>
         /// Wywołuje polecenie przez SSH i zwraca obiekt klasy CommandResponse.
-        /// </summary>
+        /// </summary>clear
         /// <param name="command">Polecenie</param>
         /// <param name="args">Argumenty polecenia</param>
         /// <returns></returns>
@@ -24,20 +25,18 @@ namespace OyaHost.BLL.Universal
                 try
                 {
                     sshclient.Connect();
-                    sshCmd = sshclient.CreateCommand(command);
-                    sshCmd.Execute();
-                    return new CommandResponse(CommandResponseStatusCode.Success, sshCmd.Result, sshCmd.Error);
+                    sshCmd = sshclient.RunCommand("echo | "+Config.DefaultTestPassword+"sudo su - root -c '"+command+"'");
+                    Console.Write(sshCmd.CommandText);
+                    string commandOutput = string.Empty;
+                    var reader = new StreamReader(sshCmd.ExtendedOutputStream);
+                    commandOutput = reader.ReadToEnd();
+
+                    return new CommandResponse(CommandResponseStatusCode.Success, commandOutput, sshCmd.Error);
                 }
                 catch (Exception ex)
                 {
-                    if (sshCmd != null)
-                    {
-                        return new CommandResponse(CommandResponseStatusCode.Exception, sshCmd.Result ?? string.Empty, sshCmd.Error ?? string.Empty, ex.Message + ex.StackTrace);
-                    }
-                    else
-                    {
-                        return new CommandResponse(CommandResponseStatusCode.Exception, string.Empty, string.Empty, ex.Message + ex.StackTrace);
-                    }
+                    return new CommandResponse(CommandResponseStatusCode.Exception,string.Empty, string.Empty, ex.Message + ex.StackTrace);
+
                 }
             }
         }
